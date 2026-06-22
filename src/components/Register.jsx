@@ -36,13 +36,16 @@ const Register = () => {
     setIsSuccess(false); // reset success if any
 
     try {
-      const response = await fetch("http://localhost:7777/user/register", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://server-3q0l.onrender.com/user/register",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-      });
+      );
 
       const data = await response.json();
 
@@ -52,7 +55,7 @@ const Register = () => {
       } else {
         // Registration success
         setIsSuccess(true);
-        navigate("/login");
+        navigate("/");
         // setTimeout(() => {
         // }, 2000);
       }

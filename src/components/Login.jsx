@@ -57,14 +57,17 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:7777/user/login", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://server-3q0l.onrender.com/user/login",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
         },
-        credentials: "include",
-      });
+      );
 
       const data = await response.json();
 
@@ -74,7 +77,7 @@ const Login = () => {
       }
 
       // Login successful
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       console.error("Error:", error);
       setServerError("Something went wrong. Please try again.");

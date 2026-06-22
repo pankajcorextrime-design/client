@@ -6,7 +6,7 @@ const Home = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await fetch("http://localhost:7777/user", {
+        const res = await fetch("https://server-3q0l.onrender.com/user", {
           credentials: "include",
         });
 
@@ -14,7 +14,7 @@ const Home = () => {
         const data = await res.json();
         console.log(data);
         if (res.status === 401) {
-          navigate("/login");
+          navigate("/");
           return;
         }
         if (!res.ok) {
