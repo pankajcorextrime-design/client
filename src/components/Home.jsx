@@ -14,7 +14,7 @@ const Home = () => {
         const data = await res.json();
         console.log(data);
         if (res.status === 401) {
-          navigate("/");
+          navigate("/login");
           return;
         }
         if (!res.ok) {

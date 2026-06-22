@@ -8,15 +8,15 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Login />,
+      element: <Home />,
     },
     {
       path: "/register",
       element: <Register />,
     },
     {
-      path: "/home",
-      element: <Home />,
+      path: "/login",
+      element: <Login />,
     },
   ]);
   return (

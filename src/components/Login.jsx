@@ -77,7 +77,7 @@ const Login = () => {
       }
 
       // Login successful
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.error("Error:", error);
       setServerError("Something went wrong. Please try again.");
